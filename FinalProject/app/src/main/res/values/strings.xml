@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Final Project</string>
+    <string name="enter_a_location">Enter a location</string>
+    <string name="not_entered_location">You haven\'t entered a location.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_occurred">An error occurred.</string>
+    <string name="no_location_has_been_bookmarked">No location has been bookmarked.</string>
+    <string name="no_connection">No connection.</string>
+    <string name="refreshing_locations">Trying to refresh locations.</string>
+    <string name="locatins_refreshed">Locations have been refreshed.</string>
+    <string name="no_internet">No internet.</string>
+    <string name="connection_lost">Connection has been lost.</string>
+</resources>

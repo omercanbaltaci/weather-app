@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AutocompleteStyle" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">17sp</item>
+        <item name="color">@color/autocompleteColor</item>
+    </style>
+
+    <style name="NoLocation" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/appDarkGray</item>
+    </style>
+
+    <style name="Temperature" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">85sp</item>
+        <item name="android:textColor">@color/appDarkGray</item>
+    </style>
+
+    <style name="CityName" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/appDarkGray</item>
+    </style>
+
+    <style name="FeelsLike" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Condition" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/appDarkGray</item>
+    </style>
+
+    <style name="Hour" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/appDarkGray</item>
+    </style>
+
+    <style name="DetailTemperature" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">70sp</item>
+        <item name="android:textColor">@color/appDarkGray</item>
+    </style>
+
+    <style name="DetailsFeelsLike" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SplashBig" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/appDarkGray</item>
+    </style>
+
+    <style name="SplashSmall" parent="@style/Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/appDarkGray</item>
+    </style>
+
+</resources>

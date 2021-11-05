@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="autocomplete_padding">25dp</dimen>
+    <dimen name="autocomplete_margin">20dp</dimen>
+    <dimen name="viewPager_margin">20dp</dimen>
+    <dimen name="temperature_margin">40dp</dimen>
+</resources>

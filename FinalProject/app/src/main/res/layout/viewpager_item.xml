@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="resultCurrent"
+            type="com.example.finalproject.ui.weatherapp.model.ResultCurrent" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="@dimen/temperature_margin"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="@dimen/temperature_margin"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/CityName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@{resultCurrent.location.name}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="London" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/temperatureC"
+                    style="@style/Temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:degreeWithSymbol="@{String.valueOf(resultCurrent.current.tempC)}"
+                    app:layout_constraintBottom_toTopOf="@+id/statusText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="29°" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/temperatureF"
+                    style="@style/Temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:visibility="gone"
+                    app:degreeWithSymbol="@{String.valueOf(resultCurrent.current.tempF)}"
+                    app:layout_constraintBottom_toTopOf="@+id/statusText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="29°" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:image="@{resultCurrent.current.condition.icon}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/name"
+                    tools:src="@mipmap/ic_113_foreground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/pagerBookmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_bookmark_big"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/statusText"
+                    style="@style/Condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="130dp"
+                    android:text="@{resultCurrent.current.condition.text}"
+                    app:layout_constraintBottom_toTopOf="@+id/toggleGroup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Partly cloudy" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/feelsLikeCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:backgroundTint="#DFDFDF"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toTopOf="@+id/toggleGroup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/statusText">
+
+                    <TextView
+                        android:id="@+id/feelsLikeTempC"
+                        style="@style/FeelsLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="20dp"
+                        app:feelsLike="@{String.valueOf(resultCurrent.current.feelsLikeC)}"
+                        tools:text="Feels like: 35°" />
+
+                    <TextView
+                        android:id="@+id/feelsLikeTempF"
+                        style="@style/FeelsLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="20dp"
+                        android:visibility="gone"
+                        app:feelsLike="@{String.valueOf(resultCurrent.current.feelsLikeF)}"
+                        tools:text="Feels like: 35°" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="60dp"
+                    app:checkedButton="@id/celcius"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/temperatureC"
+                    app:layout_constraintStart_toStartOf="@+id/temperatureC"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <Button
+                        android:id="@+id/celcius"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C°"
+                        app:layout_constraintStart_toStartOf="@+id/temperatureC"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureC" />
+
+                    <Button
+                        android:id="@+id/fahrenheit"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="F°"
+                        app:layout_constraintEnd_toEndOf="@+id/temperatureC"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureC" />
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/pagerDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_details"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
